@@ -1,15 +1,13 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 require('dotenv').config()
 
 const TOKEN = process.env.TOKEN
-bot.login(TOKEN)
+client.login(TOKEN)
 
-bot.once('ready', () => {
+client.once('ready', () => {
 	console.log('bot connected');
+	client.channels.cache.find(channel => channel.name === 'emigo-bot').send("emigo chanenl"); // for discord v12
 });
 
-
-// channel = bot.channels.cache.get('774002239110250517');
-// channel.send("test");
-
+// let myChannel = '774002239110250517'
